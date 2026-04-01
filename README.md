@@ -56,14 +56,33 @@ pip install -r requirements.txt
 
 ```bash
 # Using stdio transport (default)
-python clickup_mcp_server.py
+python server.py
 
 # Using SSE transport
-python clickup_mcp_server.py -t sse --host 0.0.0.0 --port 8080
+python server.py -t sse --host 0.0.0.0 --port 8080
 
 # Using streamable-http transport
-python clickup_mcp_server.py -t streamable-http --host 0.0.0.0 --port 8080
+python server.py -t streamable-http --host 0.0.0.0 --port 8080
 ```
+
+## Project Structure
+
+```text
+cl-mcp-clickup/
+|-- clickup_mcp/
+|   |-- __init__.py
+|   |-- cli.py
+|   |-- config.py
+|   `-- tools.py
+|-- server.py
+|-- requirements.txt
+`-- README.md
+```
+
+- `server.py` is the main runtime entrypoint.
+- `clickup_mcp/tools.py` contains ClickUp MCP tool registrations.
+- `clickup_mcp/config.py` centralizes logging and API base config.
+- `clickup_mcp/cli.py` contains transport/host/port argument parsing.
 
 ---
 
