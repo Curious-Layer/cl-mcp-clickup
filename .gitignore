@@ -25,6 +25,12 @@ wheels/
 .installed.cfg
 *.egg
 
+# Local AI/editor config stores
+.claude/
+.cursor/
+.windsurf/
+.roo/
+
 # IDE
 .idea/
 .vscode/
