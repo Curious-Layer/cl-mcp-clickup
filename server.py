@@ -14,8 +14,8 @@ configure_logging()
 logger = logging.getLogger("clickup-mcp-server")
 
 backend = HeaderCredentialBackend()
-mcp = FastMCP("MewCP ClickUp MCP Server",
-    # stateless_http=True,
+mcp = FastMCP(
+    "MewCP ClickUp MCP Server",
     middleware=[CredentialMiddleware(backend, "oauth")],
 )
 register_tools(mcp)
